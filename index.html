@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Phản Xạ Tiếng Trung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f5f5f5; /* Màu nền pastel nhạt */
+        }
+        h1 {
+            color: #4a90e2; /* Màu xanh pastel cho tiêu đề */
+            font-size: 48px; /* Tăng kích thước tiêu đề */
+            margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+        }
+        #fileInput {
+            margin-bottom: 20px; /* Khoảng cách dưới phần nhập file */
+        }
+        .sentence-container {
+            margin: 20px 0;
+        }
+        .sentence {
+            font-size: 120px; /* Tăng kích thước chữ câu tiếng Việt lên 5 lần */
+            font-weight: bold; /* Làm chữ đậm */
+            color: #333; /* Màu chữ tối để dễ đọc */
+            background-color: #ffffff; /* Nền trắng cho câu hỏi */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+            display: inline-block; /* Để câu hỏi không chiếm toàn bộ chiều rộng */
+            word-break: break-word;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4a90e2; /* Màu xanh pastel cho nút */
+            color: white;
+            transition: background-color 0.3s ease;
+            flex: 1; /* Làm cho các nút có độ dài cân đối */
+        }
+        button:hover {
+            background-color: #357abd; /* Màu xanh đậm hơn khi hover */
+        }
+        #feedback {
+            font-size: 24px; /* Tăng kích thước chữ phản hồi */
+            color: #d9534f; /* Màu đỏ pastel cho phản hồi */
+            margin: 10px 0;
+            line-height: 1.5; /* Khoảng cách giữa các dòng */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Khoảng cách giữa các nút */
+        }
+    </style>
+</head>
+<body>
+    <h1>Luyện Phản Xạ Tiếng Trung</h1>
+    
+    <!-- Phần tải lên file Excel -->
+    <input type="file" id="fileInput" accept=".xlsx">
+    
+    <div class="sentence-container">
+        <div id="vietnameseSentence" class="sentence"></div>
+        <div id="feedback"></div>
+    </div>
+    <div class="button-container">
+        <button onclick="showAnswer()">Hiển thị đáp án</button>
+        <button onclick="nextSentence()">Câu tiếp theo</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
